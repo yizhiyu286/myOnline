@@ -22,4 +22,16 @@ public interface ManageService {
     List<BaseSaleAttr> getBaseSaleAttr();
 
     void saveSpuInfo(SpuInfo spuForm);
+
+    List<SpuSaleAttr> getSaleAttrBySpuId(String spuId);
+
+    List<SpuImage> getImageList(String spuId);
+
+    void saveSkuInfo(SkuInfo skuInfo);
+
+    SkuInfo getSkuInfo(String skuId);
+
+    List<SpuSaleAttr> getSaleAttrBySpuIdAndSkuId(String spuId, String skuId);
+
+    String getSkuAttrValueMapping(String spuId);
 }

@@ -48,4 +48,16 @@ public class ManageController {
         List<BaseAttrValue> baseAttrValueList =  manageService.getAttrValueList(attrId);
         return baseAttrValueList;
     }
+
+    @GetMapping("spuSaleAttrList")
+    public List<SpuSaleAttr> spuSaleAttrList(String spuId){
+        List<SpuSaleAttr> list = manageService.getSaleAttrBySpuId(spuId);
+        return list;
+    }
+
+    @GetMapping("spuImageList")
+    public List<SpuImage> spuImageList(String spuId){
+        List<SpuImage> list = manageService.getImageList(spuId);
+        return list;
+    }
 }
