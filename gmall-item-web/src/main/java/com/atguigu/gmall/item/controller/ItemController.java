@@ -1,6 +1,7 @@
 package com.atguigu.gmall.item.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.atguigu.gmall.annotation.LoginRequire;
 import com.atguigu.gmall.bean.SkuInfo;
 import com.atguigu.gmall.bean.SpuSaleAttr;
 import com.atguigu.gmall.service.ManageService;
@@ -35,7 +36,7 @@ public class ItemController {
             model.addAttribute("valuesSku",valuesSku);
         }
         //调用方法将该sku的hotscore值增加
-        skuLsService.incrHotscore(skuId);
+        //skuLsService.incrHotscore(skuId);
         return "item";
     }
 }

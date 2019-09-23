@@ -57,8 +57,8 @@
 							</li>
 						</ul>
 						<ul class="header_ul_right">
-							<li style="border: 0;"><a href="http://passport.atguigu.com/index.html" class="aa" >你好，请登录</a></li>
-							<li><a href="http://passport.atguigu.com/index.html" style="color: red;">免费注册</a> |</li>
+							<li style="border: 0;"><a href="http://passport.gmall.com/index.html" class="aa" ><span th:if="${nickName!=null}" th:text="${nickName}"></span>你好，<span th:text="${userId==null?'请登录':''}">请登录</span></a></li>
+							<li><a href="http://passport.gmall.com/index.html" style="color: red;">免费注册</a> |</li>
 							<li><a href="javascript:;" class="aa">我的订单</a> |</li>
  
 						</ul>
@@ -219,7 +219,6 @@
 							</ul>
 						</div>
 						<input id="valuesSku" type="hidden" th:value="${valuesSku}">
-						<input id="skuId" type="hidden" th:value="${skuInfo.id}">
 						<div class="box-attr-3">
 						<br/>
 							<div class="box-attr-2 clear" th:each="sale:${saleList}" >
@@ -251,7 +250,7 @@
 							<div class="box-btns-one">
 								<form id="itemForm" action="http://cart.gmall.com/addToCart" method="post">
 								<input type="text" name="num" id="" value="1" />
-								<input type="hidden" name="skuId"   />
+								<input  id="skuId" name="skuId" type="hidden" th:value="${skuInfo.id}"/>
 
 								<div class="box-btns-one1">
 
@@ -999,6 +998,7 @@
 	<script src="/js/js.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		function addToCart(){
+		    console.log("haha");
 		    $("#itemForm").submit();
 		}
 	</script>

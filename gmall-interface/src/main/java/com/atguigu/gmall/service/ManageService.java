@@ -38,4 +38,5 @@ public interface ManageService {
     List<SkuInfo> listSkuInfo(String spuId);
 
     List<BaseAttrInfo> getAttrList(List<String> attrValueIdList);
+
 }

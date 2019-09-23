@@ -6,7 +6,6 @@ import com.atguigu.gmall.bean.*;
 import com.atguigu.gmall.manage.constant.ManageConst;
 import com.atguigu.gmall.manage.mapper.*;
 import com.atguigu.gmall.service.ManageService;
-import com.atguigu.gmall.util.RedisConfig;
 import com.atguigu.gmall.util.RedisUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.redisson.Redisson;
@@ -22,6 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
 @Service
@@ -412,5 +412,6 @@ public class ManageServiceImpl implements ManageService {
         List<BaseAttrInfo> list = baseAttrInfoMapper.getAttrInfoListByList(selectString);
         return list;
     }
+
 
 }
